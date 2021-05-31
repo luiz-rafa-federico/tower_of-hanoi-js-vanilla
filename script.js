@@ -17,9 +17,19 @@ tower2.addEventListener("click", hide);
 tower3.addEventListener("click", hide);
 
 function hide(e) {
-  console.log(e.currentTarget);
+  let barra = e.currentTarget;
+  let ultimo = barra.childElementCount;
+  if (ultimo > 0) {
+    console.log(ultimo);
+  }
 }
-
+/*if (e.childElementCount > 0) {
+  console.log("estoy aqui");
+}*/
+/*let barCount = document.getElementById("e");
+if (barCount.childElementCount > 0) {
+  console.log("estoy aqui");
+}*/
 const bar1 = document.createElement("div");
 const bar2 = document.createElement("div");
 const bar3 = document.createElement("div");
