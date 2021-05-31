@@ -15,6 +15,15 @@ tower3.classList.add("box3");
 tower1.id = "box1";
 tower2.id = "box1";
 tower3.id = "box1";
+
+tower1.addEventListener("click", hide);
+tower2.addEventListener("click", hide);
+tower3.addEventListener("click", hide);
+
+function hide(e) {
+  console.log(e.currentTarget);
+}
+
 const bar1 = document.createElement("div");
 const bar2 = document.createElement("div");
 const bar3 = document.createElement("div");
@@ -37,3 +46,5 @@ tower1.appendChild(bar4);
 tower1.appendChild(bar5);
 
 section.addEventListener(click, listener);
+
+//crear la funcion jugar que reconozca 2 cllicks
