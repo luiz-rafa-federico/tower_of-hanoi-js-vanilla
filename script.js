@@ -19,9 +19,9 @@ tower3.addEventListener("click", hide);
 function hide(e) {
   let barra = e.currentTarget;
   let ultimo = barra.childElementCount;
-  if (ultimo > 0) {
-    console.log(ultimo);
-  }
+  //if (ultimo > 0) {
+  console.log(ultimo);
+  //}
 }
 /*if (e.childElementCount > 0) {
   console.log("estoy aqui");
@@ -46,6 +46,11 @@ tower1.appendChild(bar1);
 tower1.appendChild(bar2);
 tower1.appendChild(bar3);
 tower1.appendChild(bar4);
+
+bar1.addEventListener("click", hide);
+bar2.addEventListener("click", hide);
+bar3.addEventListener("click", hide);
+bar4.addEventListener("click", hide);
 
 section.addEventListener(click, listener);
 
