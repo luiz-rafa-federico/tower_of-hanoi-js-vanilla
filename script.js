@@ -9,8 +9,8 @@ tower1.classList.add("box", "box1", "wrapper");
 tower2.classList.add("box", "box2", "wrapper");
 tower3.classList.add("box", "box3", "wrapper");
 tower1.id = "box1";
-tower2.id = "box1";
-tower3.id = "box1";
+tower2.id = "box2";
+tower3.id = "box3";
 
 tower1.addEventListener("click", hide);
 tower2.addEventListener("click", hide);
@@ -20,7 +20,8 @@ function hide(e) {
   let barra = e.currentTarget;
   let ultimo = barra.childElementCount;
   //if (ultimo > 0) {
-  console.log(ultimo);
+  console.log(barra);
+  console.log(number);
   //}
 }
 /*if (e.childElementCount > 0) {
