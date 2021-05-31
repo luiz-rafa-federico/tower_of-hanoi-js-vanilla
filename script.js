@@ -1,0 +1,10 @@
+const section = document.getElementById("section");
+const tower1 = document.createElement("div");
+const tower2 = document.createElement("div");
+const tower3 = document.createElement("div");
+section.appendChild(tower1);
+section.appendChild(tower2);
+section.appendChild(tower3);
+tower1.classList.add("box__box1");
+tower2.classList.add("box__box2");
+tower3.classList.add("box__box3");
