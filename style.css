@@ -10,3 +10,15 @@ body {
   text-align: center;
   align-items: center;
 }
+section {
+  width: 40rem;
+  height: 20rem;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: row;
+}
+.box {
+  border: 1px dashed grey;
+  height: 100%;
+  width: 33.3%;
+}
