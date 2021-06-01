@@ -2,6 +2,7 @@ const section = document.getElementById("section");
 const tower1 = document.createElement("div");
 const tower2 = document.createElement("div");
 const tower3 = document.createElement("div");
+section.classList.add("coluna");
 section.appendChild(tower1);
 section.appendChild(tower2);
 section.appendChild(tower3);
@@ -11,29 +12,6 @@ tower3.classList.add("box", "box3", "wrapper");
 tower1.id = "box1";
 tower2.id = "box2";
 tower3.id = "box3";
-
-tower1.addEventListener("click", hide);
-tower2.addEventListener("click", hide);
-tower3.addEventListener("click", hide);
-
-function hide(e) {
-  element = e.lastElementChild;
-
-  let barra = e.currentTarget;
-  let ultimo = barra.childElementCount;
-  if (ultimo > 0) {
-    this.removeChild(this.lastElementChild);
-    //console.log(tower1);
-    //  console.log(ultimo);
-  }
-}
-/*if (e.childElementCount > 0) {
-  console.log("estoy aqui");
-}*/
-/*let barCount = document.getElementById("e");
-if (barCount.childElementCount > 0) {
-  console.log("estoy aqui");
-}*/
 const bar1 = document.createElement("div");
 const bar2 = document.createElement("div");
 const bar3 = document.createElement("div");
@@ -50,12 +28,73 @@ tower1.appendChild(bar1);
 tower1.appendChild(bar2);
 tower1.appendChild(bar3);
 tower1.appendChild(bar4);
+/*tower1.addEventListener("click", hide);
+tower2.addEventListener("click", hide);
+tower3.addEventListener("click", hide);
+*/
 
-bar1.addEventListener("click", hide);
-bar2.addEventListener("click", hide);
-bar3.addEventListener("click", hide);
-bar4.addEventListener("click", hide);
+const towers = document.querySelectorAll(".coluna");
 
-section.addEventListener(click, listener);
+let isClick = false;
+
+const game = (event) => {
+  const tower = event.currentTarget;
+  console.log(tower.lastElementChild);
+  if (isClick) {
+    isClick = false;
+    console.log("click2");
+  } else {
+    isClick = true;
+    console.log("click1");
+  }
+};
+
+towers.forEach((tower) => tower.addEventListener("click", game));
+
+/*
+const towers = document.querySelectorAll(".box");
+const isClick = false;
+
+const game = (event) => {
+  const tower = event.currentTarget;
+  console.log(tower.lastElementChild);
+
+    if (isClick) {
+    isClick = false;
+    console.log("click2");
+  } else {
+    isClick = true;
+    console.log("click1");
+  }*/
+//};
+//for (let i = 0; i < towers.length; i++) {
+//towers.addEventListener("click", game);
+//}
+/*function hide(e) {
+  element = e.lastElementChild;
+
+  let remover = this.removeChild(this.lastElementChild);
+  let barra = e.currentTarget;
+  let ultimo = barra.childElementCount;
+  if (ultimo > 0) {
+    remover;
+    //console.log(tower1);
+    //  console.log(ultimo);
+  }
+}*/
+/*if (e.childElementCount > 0) {
+  console.log("estoy aqui");
+}*/
+/*let barCount = document.getElementById("e");
+if (barCount.childElementCount > 0) {
+  console.log("estoy aqui");
+}
+bar1.addEventListener("click", game);
+bar2.addEventListener("click", game);
+bar3.addEventListener("click", game);
+bar4.addEventListener("click", game);
+
+*/
+//section.addEventListener(click, listener);
 
 //crear la funcion jugar que reconozca 2 cllicks

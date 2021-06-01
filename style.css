@@ -36,22 +36,22 @@ h1 {
   background-color: snow;
 }
 .bar4 {
-  width: 70%;
+  width: 25%;
   height: 40px;
   background-color: blue;
 }
 .bar3 {
-  width: 55%;
+  width: 40%;
   height: 40px;
   background-color: yellowgreen;
 }
 .bar2 {
-  width: 40%;
+  width: 55%;
   height: 40px;
   background-color: salmon;
 }
 .bar1 {
-  width: 25%;
+  width: 70%;
   height: 40px;
   background-color: black;
 }
