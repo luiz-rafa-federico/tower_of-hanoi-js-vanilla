@@ -17,12 +17,15 @@ tower2.addEventListener("click", hide);
 tower3.addEventListener("click", hide);
 
 function hide(e) {
+  element = e.lastElementChild;
+
   let barra = e.currentTarget;
   let ultimo = barra.childElementCount;
-  //if (ultimo > 0) {
-  console.log(barra);
-  console.log(number);
-  //}
+  if (ultimo > 0) {
+    this.removeChild(this.lastElementChild);
+    //console.log(tower1);
+    //  console.log(ultimo);
+  }
 }
 /*if (e.childElementCount > 0) {
   console.log("estoy aqui");
