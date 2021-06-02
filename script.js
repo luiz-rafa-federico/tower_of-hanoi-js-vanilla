@@ -46,6 +46,19 @@ const towers = document.querySelectorAll(".tower");
 
 let isClick = false;
 let storedElm = undefined;
+let countMoves = 0;
+let medida = 0;
+
+//victoria
+/*if (countMoves == 31 && towersInDestiny == 5) {
+  aletr("Parabens Voce acertou com 31 movimentps ");
+} else if (countMoves > 31 && towersInDestiny == 5) {
+  alert("ok! Vc Certou com " + countMoves + "movimentos!");
+}
+
+if (medida > lastElm.clientWidth) {
+  alert("movimento errado!!!!");
+}*/
 
 const game = (e) => {
   const tow = e.currentTarget;
@@ -56,12 +69,15 @@ const game = (e) => {
     isClick = false;
     console.log("Clique 2");
     tow.appendChild(storedElm);
+    countMoves++;
     console.log(lastElm.clientWidth);
+    console.log(countMoves + " movimientos");
   } else {
     isClick = true;
     console.log("Clique 1");
 
-    console.log(lastElm.clientWidth);
+    let medida = lastElm.clientWidth;
+    console.log(medida);
     storedElm = lastElm;
   }
 };
