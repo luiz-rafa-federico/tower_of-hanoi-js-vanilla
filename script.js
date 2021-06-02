@@ -70,7 +70,11 @@ const game = (e) => {
     console.log("Clique 2");
     tow.appendChild(storedElm);
     countMoves++;
+    /*    if (lastElm == "") {
+      return tow;
+    }*/
     console.log(lastElm.clientWidth);
+    //console.log(tow.clientWidth);
     console.log(countMoves + " movimientos");
   } else {
     isClick = true;
