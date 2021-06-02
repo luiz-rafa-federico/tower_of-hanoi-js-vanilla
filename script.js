@@ -15,6 +15,7 @@ tower3.id = 'stack3';
 tower3.classList.add('wrapper', 'tower');
 content.appendChild(tower3)
 
+//DISCOS
 const disc1 = document.createElement('div');
 disc1.id = 'box-1';
 disc1.classList.add('box', 'box1');
@@ -30,7 +31,6 @@ disc3.id = 'box-3';
 disc3.classList.add('box', 'box3');
 tower1.appendChild(disc3);
 
-// DISCOS
 const disc4 = document.createElement('div');
 disc4.id = 'box-4';
 disc4.classList.add('box', 'box4');
@@ -45,23 +45,57 @@ tower1.appendChild(disc5);
 const towers = document.querySelectorAll('.tower');
 
 let isClick = false;
+let lastElm = undefined;
 let storedElm = undefined;
+let countMoves = 0;
+let towersInOrigin = 0;
+let towersInDestiny = 0;
 
 const game = (e) => {
-    const tow = e.currentTarget; 
-    const lastElm = tow.lastElementChild;
+    const tow = e.currentTarget;
 
     if (isClick) {
         isClick = false;
         console.log('Clique 2')
-        tow.appendChild(storedElm);
+        storedElm = tow.lastElementChild;
+        tow.appendChild(lastElm);
+        countMoves++;
+        const moves = document.getElementById('moves');
+        moves.innerText = "Movimentos: " + countMoves;
+        towersInDestiny = tow.childElementCount
+        if (storedElm != null && lastElm.clientWidth > storedElm.clientWidth) {
+            alert ('Movimento errado! Nenhuma peça maior pode ser colocada sobre uma menor. Clique em OK para começar de novo.')
+
+            location.reload();
+        }
     } else {
-        isClick = true;
-        console.log('Clique 1')
-        storedElm = lastElm;
+        if (tow.childElementCount == 0) {
+            alert('Você não pode clicar em um lugar vazio!!' + '\n' + 'Clique em OK para começar de novo.')
+            location.reload();
+        } else {
+            isClick = true;
+            console.log('Clique 1')
+            lastElm = tow.lastElementChild;
+            towersInOrigin = tow.childElementCount;
+        } 
+    }
+
+    // CONDIÇOES DE VITÓRIA
+    if (countMoves == 31 && towersInDestiny == 5) {
+        alert('Parabéns! Você acertou com 31 movimentos!!!');
+        location.reload();
+    } else if (countMoves > 31 && towersInDestiny == 5) {
+        alert ('Ok! Você acertou com ' + countMoves + ' movimentos!')
+        location.reload();
     }
 }
 towers.forEach(tower => tower.addEventListener('click', game));
+
+
+
+
+
+
 
 
 

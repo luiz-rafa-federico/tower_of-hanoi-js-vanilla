@@ -13,6 +13,12 @@ h1 {
 text-align: center;
 margin: 40px;
 }
+.movimentos {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
 .content-wrapper {
 display: flex;
 flex-direction: column;
